@@ -1,0 +1,35 @@
+<p>You choose to pick {{ game.cardNumber }} card(s)</p>
+<br>
+Order of colors: {% for color in game.colorOrder %} {{ color }}, {% endfor %}
+<br>
+Order of values: {% for value in game.valueOrder %} {{ value }}, {% endfor %}
+
+<div style="display: inline-flex; width: 100%">
+    {% for card in hand %}
+        <div class="card" style="flex-grow: 1; border: 1px solid black; margin: 1rem; display: flex; flex-direction: column; justify-content: center; align-items: center">
+            <div class="card-header">
+                <h1 class="card-title">{{ card.color }}</h1>
+            </div>
+            <div class="card-body">
+                <p>{{ card.value }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+You ordered hand is :
+
+<div style="display: inline-flex; width: 100%">
+    {% for card in orderedHand %}
+        <div class="card" style="flex-grow: 1; border: 1px solid black; margin: 1rem; display: flex; flex-direction: column; justify-content: center; align-items: center">
+            <div class="card-header">
+                <h1 class="card-title">{{ card.color }}</h1>
+            </div>
+            <div class="card-body">
+                <p>{{ card.value }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+
